@@ -1,0 +1,450 @@
+/* poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("variables.css");
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.8s ease;
+}
+/* body styles  */
+body {
+  height: 100vh;
+  background-color: var(--body-color);
+}
+/* navigation bar  */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  background-color: var(--nav-color);
+  z-index: 100;
+  box-shadow: var(--box-shadow);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+body.dark nav {
+  border: 1px solid var(--border-color);
+  box-shadow: var(--box-shadow);
+}
+nav .nav-bar {
+  position: relative;
+  height: 100%;
+  max-width: 1000px;
+  width: 100%;
+  background-color: var(--nav-color);
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .nav-bar .sidebarOpen {
+  color: var(--text-color);
+  font-size: 25px;
+  padding: 5px;
+  cursor: pointer;
+  display: none;
+}
+nav .nav-bar .logo a {
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--text-color);
+  text-decoration: none;
+}
+.menu .logo-toggle {
+  display: none;
+}
+.nav-bar .nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-bar .nav-links li {
+  margin: 0 5px;
+  list-style: none;
+}
+.nav-links li a {
+  position: relative;
+  font-size: var(--text-size);
+  font-weight: 400;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 10px;
+}
+.nav-links li a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.nav-links li:hover a::before {
+  opacity: 1;
+}
+.nav-bar .darkLight-searchBox {
+  display: flex;
+  align-items: center;
+}
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+}
+.dark-light i,
+.searchToggle i {
+  position: absolute;
+  color: var(--text-color);
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.dark-light i.sun {
+  opacity: 0;
+  pointer-events: none;
+}
+.dark-light.active i.sun {
+  opacity: 1;
+  pointer-events: auto;
+}
+.dark-light.active i.moon {
+  opacity: 0;
+  pointer-events: none;
+}
+.searchToggle i.cancel {
+  opacity: 0;
+  pointer-events: none;
+}
+.searchToggle.active i.cancel {
+  opacity: 1;
+  pointer-events: auto;
+}
+.searchToggle.active i.search {
+  opacity: 0;
+  pointer-events: none;
+}
+.searchBox {
+  position: relative;
+}
+.searchBox .search-field {
+  position: absolute;
+  bottom: -85px;
+  right: 5px;
+  height: 50px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  background-color: var(--nav-color);
+  padding: 3px;
+  border-radius: 6px;
+  box-shadow: var(--box-shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.searchToggle.active ~ .search-field {
+  bottom: -74px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-field::before {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: -4px;
+  height: 12px;
+  width: 12px;
+  background-color: var(--nav-color);
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+.search-field input {
+  height: 100%;
+  width: 100%;
+  padding: 0 45px 0 15px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--search-text);
+  background-color: var(--search-bar);
+}
+body.dark .search-field input {
+  color: var(--text-color);
+}
+.search-field i {
+  position: absolute;
+  color: var(--nav-color);
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+body.dark .search-field i {
+  color: var(--text-color);
+}
+/* Dark mode styling for the menu when screen becomes responsive */
+body.dark .menu {
+  background-color: var(--side-nav);
+}
+body.dark nav .sidebarOpen {
+  color: var(--text-color);
+}
+/* You can also style other elements like the links in the menu, etc. */
+body.dark .nav-links li a {
+  color: var(--text-color);
+}
+/* Dark mode styles for the hamburger button */
+body.dark .sidebarOpen {
+  color: var(--text-color);
+}
+.home,
+.contact,
+.services,
+.about,
+.best-deals {
+  margin-top: 5rem;
+}
+.home {
+  color: var(--text-color);
+}
+body.dark .home,
+body.dark .contact,
+body.dark .services,
+body.dark .about,
+body.dark .first-dev-name,
+body.dark .second-dev-name,
+body.dark .third-dev-name,
+body.dark .fourth-dev-name,
+body.dark .dev-description {
+  color: var(--white-color);
+}
+/* get yours starts here  */
+.get-yours {
+  padding: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+}
+.dark-theme {
+  background-color: black;
+  color: var(--white-color);
+}
+.light-theme {
+  background-color: white;
+  color: black;
+}
+body.dark .get-yours {
+  background-color: black;
+  color: var(--white-color);
+}
+/* Form container */
+.form-container {
+  background-color: var(--form-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  max-width: 600px;
+  margin: 50px auto;
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+/* The class to show the form with the animation */
+.form-container.show-form {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInSlideUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: var(--input-bg);
+}
+.form-container button {
+  padding: 10px 20px;
+  background-color: var(--primary-button-bg);
+  color: var(--white-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+.form-container button:hover {
+  background-color: var(--primary-button-hover-bg);
+}
+/* footer  */
+footer {
+  margin-top: auto;
+}
+/* about page  */
+.about-devs {
+  margin-top: 2rem;
+  padding: 15px;
+  border-radius: 15px;
+}
+.devs {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  column-gap: 2rem;
+}
+.first-dev > img,
+.second-dev > img,
+.third-dev > img,
+.fourth-dev > img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+}
+/* names of dev  */
+.first-dev-name,
+.second-dev-name,
+.third-dev-name,
+.fourth-dev-name {
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.dev-description {
+  text-align: center;
+}
+/* footer  */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--white-color);
+  padding: 40px 0;
+  margin-top: auto;
+  text-align: center;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 100%;
+  text-align: justify;
+}
+.footer-first-section,
+.footer-links,
+.footer-social-media {
+  width: 30%;
+  margin: 10px 0;
+}
+.footer-first-section h2,
+.footer-links h3,
+.footer-social-media h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.footer-description {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.footer-links ul,
+.footer-social-media ul {
+  list-style-type: none;
+  padding: 0;
+}
+.footer-links ul li,
+.footer-social-media ul li {
+  margin: 8px 0;
+}
+.footer-links ul li a,
+.footer-social-media ul li a {
+  color: var(--white-color);
+  text-decoration: none;
+  font-size: 14px;
+}
+.footer-links ul li a:hover,
+.footer-social-media ul li a:hover {
+  color: var(--primary-button-bg);
+}
+.footer-social-media .social-icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
+/* Footer Suggestion Form */
+.footer-suggestion-form {
+  width: 30%;
+  margin-top: -100px;
+}
+.footer-suggestion-form h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--white-color);
+}
+.footer-suggestion-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer-suggestion-form .form-group {
+  width: 100%;
+}
+.footer-suggestion-form input,
+.footer-suggestion-form textarea {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid var(--border-color-white);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: var(--input-bg);
+}
+.footer-suggestion-form button {
+  padding: 10px 20px;
+  background-color: var(--nav-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 700;
+  border: 1px solid var(--border-color-white);
+  font-size: 16px;
+}
+/* Prevent textarea resize */
+.footer-suggestion-form textarea {
+  resize: none;
+}

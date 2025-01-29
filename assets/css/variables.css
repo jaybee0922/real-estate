@@ -1,0 +1,37 @@
+/* Default theme */
+:root {
+  --body-color: #e4e9f7;
+  --nav-color: #f5f5f5;
+  --side-nav: #010718;
+  --text-color: #000;
+  --search-bar: #f2f2f2;
+  --search-text: #010718;
+  --text-size: 15px;
+  --white-color: #fff;
+
+  /* Additional utility variables */
+  --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --border-color: #ccc;
+  --input-bg: #f9f9f9;
+  --primary-button-bg: #007bff;
+  --primary-button-hover-bg: #0056b3;
+  --footer-bg: #1a1a1a;
+  --border-color-white: #fff;
+}
+
+/* Dark mode theme variables */
+body.dark {
+  --body-color: #18191a;
+  --nav-color: #242526;
+  --side-nav: #242526;
+  --text-color: #ccc;
+  --search-bar: #242526;
+
+  /* Dark mode specific utility variables */
+  --box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 29px 0px;
+  --border-color: #444;
+  --input-bg: #333;
+  --primary-button-bg: #0069d9;
+  --primary-button-hover-bg: #004085;
+  --footer-bg: #18191a;
+}
